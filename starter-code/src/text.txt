@@ -1,0 +1,53 @@
+
+import { Switch, Route } from 'react-router-dom';
+
+
+
+
+
+
+
+
+class App extends Component {
+
+
+  state = {
+
+
+    countries :   world,
+
+    
+
+    
+  }
+
+
+
+
+  render() {
+    return (
+      <div>
+
+      <Header />
+
+
+      
+      
+      <Switch>
+          <Route  exact path='/' component = {ListOfCountries} />
+      </Switch>
+
+
+      <Switch>
+
+        <Route  path = '/:cca3' component ={AboutCountry} />
+
+      </Switch>
+
+
+
+        
+      </div>
+    );
+  }
+}

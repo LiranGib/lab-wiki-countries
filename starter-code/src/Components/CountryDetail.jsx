@@ -1,31 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import App from './App';
-import countriesData from './countries.json';
-import 'bootstrap/dist/css/bootstrap.css';
+import '../App.css';
+import { Link } from 'react-router-dom';
+import countriesData from '../countries.json';
+import Countries from './Countries';
 
 
-class CountryDetails extends Component {
+  const CountryDetails = (props) => {  
+        console.log(props)
+        let {name, cca3, subregion} = props.location.state.coutry
+        // Countries.props.find(props.match.params.cca3)
 
-  state = {
-    countriesData: countriesData
-  }
+            
+        // }
+ 
 
-  render() {
-    return (this.state.countriesData.map((oneCountry,index) => {
-      return (
-        <div class="col-2 p-1">
-          <div  className ="list-group" key = {index}>
-            <li className="list-group-item list-group-item-action">
-              <Link to='/CountryDetails'>{oneCountry.name.common}</Link>
-            </li>
-          </div>
-        </div>
-        )
-     })
-    )  
-  }
+
+  return (
+        <div>
+            <h1>{props.match.params.cca3} {name.common} {cca3} {subregion}</h1>
+     
+    </div>
+  )
 }
-  export default CountryDetails;
-  
+
+export default CountryDetails;
+
+// class CountryDetails extends Component {
+
+//   state = {
+//     countriesData: countriesData,
+//   }
+
+//   render() {
+//       return (
+//         <div class="col-2 p-1">
+          
+//         </div>
+//         )
+//      })
+//     )  
+//   }
+// }
